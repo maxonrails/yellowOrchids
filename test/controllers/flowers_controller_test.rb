@@ -3,6 +3,12 @@ require 'test_helper'
 class FlowersControllerTest < ActionController::TestCase
   setup do
     @flower = flowers(:one)
+    @update = {
+      name: 'Lorem Ipsum',
+      description: 'Lorem Ipsum Bussum Bassa',
+      image_url: 'lorem.jpg',
+      price: 19.69
+    }
   end
 
   test "should get index" do
@@ -18,7 +24,7 @@ class FlowersControllerTest < ActionController::TestCase
 
   test "should create flower" do
     assert_difference('Flower.count') do
-      post :create, flower: { description: @flower.description, image_url: @flower.image_url, name: @flower.name, price: @flower.price }
+      post :create, flower: @update
     end
 
     assert_redirected_to flower_path(assigns(:flower))
@@ -35,7 +41,7 @@ class FlowersControllerTest < ActionController::TestCase
   end
 
   test "should update flower" do
-    patch :update, id: @flower, flower: { description: @flower.description, image_url: @flower.image_url, name: @flower.name, price: @flower.price }
+    patch :update, id: @flower, flower: @update
     assert_redirected_to flower_path(assigns(:flower))
   end
 
