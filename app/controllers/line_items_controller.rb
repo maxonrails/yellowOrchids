@@ -27,7 +27,7 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     flower = Flower.find(params[:flower_id])
-    @line_item = @cart.line_items.build(flower: flower)
+    @line_item = @cart.add_flower(flower.id)
 
     respond_to do |format|
       if @line_item.save
