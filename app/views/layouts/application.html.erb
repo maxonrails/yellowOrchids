@@ -8,6 +8,20 @@
 </head>
 <body class='<%= controller.controller_name %>'>
 
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <%= link_to 'Yellow Orchids', root_path, class: 'navbar-brand' %>
+    </div>
+    <div id="navbar">
+        <ul class="nav navbar-nav pull-right">
+          <li>Contact</li>|
+          <li>Question</li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
 <%= yield %>
 
 </body>

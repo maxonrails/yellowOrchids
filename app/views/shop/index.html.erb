@@ -4,13 +4,18 @@
 
 <h1>All Kind of Flowers</h1>
 
-<% @flowers.each do |f| %>
-  <div class="entry">
-    <%= image_tag(f.image_url) %>
-    <h3><%= f.name %></h3>
-    <%= sanitize(f.description) %>
-    <div class="price_line">
-      <span class="price"><%= f.price %></span>
-    </div>
-  </div>
+<% cache ['store', Flower.latest] do %>
+    <% @flowers.each do |f| %>
+        <% cache ['entry', f] do %>
+          <div class="entry">
+            <%= image_tag(f.image_url) %>
+            <h3><%= f.name %></h3>
+            <%= sanitize(f.description) %>
+            <div class="price_line">
+              <span class="price"><%= number_to_currency(f.price) %></span>
+            </div>
+          </div>
+        <% end %>
+    <% end %>
 <% end %>
+
