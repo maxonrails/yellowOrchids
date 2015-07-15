@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @flower.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @flower.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @flower.image_url %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @flower.price %>
+</p>
+
+<%= link_to 'Edit', edit_flower_path(@flower) %> |
+<%= link_to 'Back', flowers_path %>
