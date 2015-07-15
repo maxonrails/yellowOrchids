@@ -1,33 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Flowers</h1>
+<h1>Listing flowers</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @flowers.each do |flower| %>
-      <tr>
-        <td><%= flower.name %></td>
-        <td><%= flower.description %></td>
-        <td><%= flower.image_url %></td>
-        <td><%= flower.price %></td>
-        <td><%= link_to 'Show', flower %></td>
-        <td><%= link_to 'Edit', edit_flower_path(flower) %></td>
-        <td><%= link_to 'Destroy', flower, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<% @flowers.each do |flower| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td>
+      <%= image_tag(flower.image_url, class: 'list_image') %>
+    </td>
+    <td class="list_description">
+      <dl>
+        <dt><%= flower.name %></dt>
+        <dd><%= truncate(flower.description, length: 80) %></dd>
+      </dl>
+    </td>
+    <td class="list_actions">
+      <%= link_to 'Show', flower %><br/>
+      <%= link_to 'Edit', edit_flower_path(flower) %><br/>
+      <%= link_to 'Destroy', flower, method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+<% end %>
 </table>
-
-<br>
-
-<%= link_to 'New Flower', new_flower_path %>
+<br />
+<%= link_to 'New flower', new_flower_path %>
