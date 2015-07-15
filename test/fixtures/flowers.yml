@@ -1,13 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
-  name: MyString
-  description: MyText
-  image_url: MyString
-  price: 9.99
-
-two:
-  name: MyString
-  description: MyText
-  image_url: MyString
+  name: Lovely Lilies
+  description: Lilies are the best of the best of the best of the best which said nothing of the best
+  image_url: sad.jpg
   price: 9.99

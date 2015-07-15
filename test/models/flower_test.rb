@@ -4,4 +4,5 @@ class FlowerTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  fixtures :flowers
 end
