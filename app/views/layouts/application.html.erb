@@ -6,23 +6,26 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-
-<nav class="navbar navbar-default">
-  <div class="container">
-    <div class="navbar-header">
-      <%= link_to 'Yellow Orchids', root_path, class: 'navbar-brand' %>
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= @page_title || "Yellow Orchids" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <div id="cart">
+        <%= render @cart %>
+      </div>
+      <ul>
+        <li><a href="http://www....">Home</a></li>
+        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="http://www..../news">News</a></li>
+        <li><a href="http://www..../contact">Contact</a></li>
+      </ul>
     </div>
-    <div id="navbar">
-        <ul class="nav navbar-nav pull-right">
-          <li>Contact</li>|
-          <li>Question</li>
-        </ul>
+    <div id="main">
+      <%= yield %>
     </div>
-    </div>
-</nav>
-
-<%= yield %>
-
+  </div>
+</body>
 </body>
 </html>

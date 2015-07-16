@@ -13,7 +13,8 @@
             <%= sanitize(f.description) %>
             <div class="price_line">
               <span class="price"><%= number_to_currency(f.price) %></span>
-              <%= button_to 'Add to Cart', line_items_path(flower_id: f) %>
+              <%= button_to 'Add to Cart', line_items_path(product_id: product),
+            remote: true %>
             </div>
           </div>
         <% end %>
