@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
   end
-d
   # GET /orders/new
   def new
     if @cart.line_items.empty?
@@ -38,7 +37,7 @@ def create
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
 
-        format.html { redirect_to store_url, notice:
+        format.html { redirect_to root_url, notice:
           'Thank you for your order.' }
         format.json { render action: 'show', status: :created,
           location: @order }
