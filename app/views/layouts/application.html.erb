@@ -24,17 +24,17 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li class="glyphicon glyphicon-shopping-cart">
+                <% if current_user %>
+                  <ul class="nav navbar-nav pull-right">
+                    <li><%= image_tag current_user.image_url, alt: current_user.name %></li>
+                    <li><%= link_to 'Log Out', logout_path, method: :delete %></li>
+                  </ul>
+                <% else %>
+                  <ul class="nav navbar-nav">
+                    <li><%= link_to 'Google+', '/auth/google' %></li>
+                  </ul>
+                <% end %>
+                    <li class="glyphicon glyphicon-shopping-cart pull-right">
                        <% if @cart %>
                         <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
                           <%= render @cart %>
@@ -46,6 +46,10 @@
             <!-- /.navbar-collapse -->
 
         </div>
+
+
+
+    </div>
 
         <!-- /.container -->
     </nav>
