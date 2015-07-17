@@ -59,7 +59,7 @@
                         <h3><%= f.name %></h3>
                          <p><%= truncate(f.description, length: 80  ) %></p>
                         <p><%= button_to 'Add to Cart', line_items_path(flower_id: f), class: "btn btn-primary" %>
-                            <%= button_to 'More Information', flowers_path(flower_id: f), class: "btn btn-default" %>
+                            <%= link_to 'More Information', flowers_path, class: "btn btn-default" %>
                         </p>
                     </div>
                 </div>
