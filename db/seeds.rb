@@ -19,7 +19,7 @@ Flower.create!(name: "Heat Wave", description: "Send your warmest wishes with th
     and orange tones. This vased arrangement includes Gerbera daisies,
     miniature roses, button poms, monte casino, solidaster, or similar fresh flower favorites.
     Great for a birthday, get well, thanks, or thinking of you.",
-    image_url: 'HeatWave.jpg',
+    image_url: 'moreroses.jpg',
     price: 37.69)
 
 Flower.create!(name: "Sunny Sentiments", description: "Send a bouquet of instant happiness
