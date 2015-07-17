@@ -1,0 +1,23 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+google_client_id: "240552956922-2jmsu43pelgkg3t1116u0h2upgnfn0t7.apps.googleusercontent.com"
+google_client_secret: "6BqvuY4WFEBxIqD-5DCXYNuY"
+
+FACEBOOK_APP_ID: "688570514621355"
+FACEBOOK_APP_SECRET: "7be9e98ea09beae9e5d24eb2a7b1c3dc"
+
+TWITTER_KEY: "roJwzWDUjnvM9LDcuoJUidGrr"
+TWITTER_SECRET: "ByI8XvZbMMIYP1lGfSipDgtClzyammX7Qs3klVkQLyujMyq1Cu"
+
+LINKEDIN_KEY: "75y4b49952ld9t"
+LINKEDIN_SECRET: "sYMkv1jfIaTnuTJM"

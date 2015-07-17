@@ -4,20 +4,82 @@
 
 <h1>All Kind of Flowers</h1>
 
-<% cache ['store', Flower.latest] do %>
-    <% @flowers.each do |f| %>
-        <% cache ['entry', f] do %>
-          <div class="entry">
-            <%= image_tag(f.image_url) %>
-            <h3><%= f.name %></h3>
-            <%= sanitize(f.description) %>
-            <div class="price_line">
-              <span class="price"><%= number_to_currency(f.price) %></span>
-              <%= button_to 'Add to Cart', line_items_path(flower_id: f),
-            remote: true %>
+
+
+<!-- Page Content -->
+    <div class="container">
+
+        <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                  <%= image_tag 'HeatWave.jpg', class: 'slide-image' %>
+                                </div>
+                                <div class="item">
+                                    <%= image_tag 'brightspot.jpg', class: 'slide-image' %>
+                                </div>
+                                <div class="item">
+                                    <%= image_tag 'wondorous.jpg', class: 'slide-image' %>
+                                </div>
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>Features Bouquets</h3>
             </div>
+        </div>
+        <!-- /.row -->
+    <% cache ['shop', Flower.latest] do %>
+      <% @flowers.each do |f| %>
+        <% cache ['entry', f] do %>
+          <div class="col-md-3 col-sm-6 hero-feature">
+                <div class="thumbnail">
+                    <%= image_tag(f.image_url) %>
+                      <div class="caption">
+                        <h3><%= f.name %></h3>
+                         <p><%= sanitize(f.description) %></p>
+                        <div class="price_line">
+                          <span class="price"><%= number_to_currency(f.price) %></span>
+                        </div>
+                        <%= button_to 'Add to Cart', line_items_path(flower_id: f), class: "btn btn-primary" %>
+                        <%= button_to 'More Information', flowers_path(flower_id: f), class: "btn btn-default" %>
+                    </div>
+                </div>
           </div>
         <% end %>
     <% end %>
 <% end %>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Max Tran WDI 16!</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
 
