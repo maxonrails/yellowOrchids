@@ -49,17 +49,18 @@
     <% cache ['shop', Flower.latest] do %>
       <% @flowers.each do |f| %>
         <% cache ['entry', f] do %>
-          <div class="col-md-3 col-sm-6 hero-feature">
+          <div class="col-md-4 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <%= image_tag(f.image_url) %>
-                      <div class="caption">
-                        <h3><%= f.name %></h3>
-                         <p><%= sanitize(f.description) %></p>
-                        <div class="price_line">
+                    <h5 class="price_line" align= 'center' >
                           <span class="price"><%= number_to_currency(f.price) %></span>
-                        </div>
-                        <%= button_to 'Add to Cart', line_items_path(flower_id: f), class: "btn btn-primary" %>
-                        <%= button_to 'More Information', flowers_path(flower_id: f), class: "btn btn-default" %>
+                        </h5>
+                      <div class="caption" >
+                        <h3><%= f.name %></h3>
+                         <p><%= truncate(f.description, length: 80  ) %></p>
+                        <p><%= button_to 'Add to Cart', line_items_path(flower_id: f), class: "btn btn-primary" %>
+                            <%= button_to 'More Information', flowers_path(flower_id: f), class: "btn btn-default" %>
+                        </p>
                     </div>
                 </div>
           </div>

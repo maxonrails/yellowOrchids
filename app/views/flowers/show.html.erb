@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@flower.image_url, class: 'list_image') %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @flower.name %>
 </p>
@@ -11,13 +15,8 @@
 </p>
 
 <p>
-  <strong>Image url:</strong>
-  <%= @flower.image_url %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @flower.price %>
+  <strong class='price)'>Price:</strong>
+  <%= number_to_currency(@flower.price) %>
 </p>
 
 <%= link_to 'Edit', edit_flower_path(@flower) %> |

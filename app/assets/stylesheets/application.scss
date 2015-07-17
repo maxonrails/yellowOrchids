@@ -40,5 +40,19 @@ footer {
 
 .carousel-control,
 .item {
-    border-radius: 4px;
+    border-radius: 3px;
+}
+
+form {
+  display: inline;
+  margin-top: 0em;
+}
+
+.col-sm-6 {
+    padding-left: 0px;
+}
+
+.thumbnail {
+    width: 355px;
+    height: 623px;
 }
