@@ -10,7 +10,7 @@ class Flower < ActiveRecord::Base
         with: %r{\.(gif | jpg | png)\Z}i,
         message: 'must be GIF, JPG or PNG image.'
     }
-    validates :title, length: {minimum: 10}
+    validates :name, length: {minimum: 10}
 
     def self.latest
         Flower.order(:updated_at).last
