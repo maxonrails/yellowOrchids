@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :line_items
   resources :carts
   resources :flowers
+  delete '/logout', to: 'sessions#destroy'
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'sessions#auth_failure'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
