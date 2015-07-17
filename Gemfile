@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -28,7 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-ui-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+group :production do
+  gem 'rails_12factor'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
